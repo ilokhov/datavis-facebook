@@ -1,0 +1,23 @@
+{
+  "name": "datavis-facebook",
+  "version": "1.0.0",
+  "description": "Visualising my 10 years on Facebook",
+  "private": true,
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean-css": "^3.3.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2"
+  },
+  "dependencies": {
+    "d3": "^4.9.1",
+    "d3-svg-annotation": "^1.15.0"
+  }
+}

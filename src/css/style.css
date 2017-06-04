@@ -1,0 +1,366 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html, body, div, span, iframe, figure,
+h1, h2, h3, h4, h5, h6,
+p, a, img, ol, ul, li,
+form, label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+header, main, footer, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px;
+  color: #2a2a2a;
+}
+h1,
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 2em 0 0.5em;
+}
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 1.8em;
+}
+p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.15em;
+  line-height: 1.5;
+  margin: 1em 0;
+}
+ul {
+  margin: 1em 0 2em;
+}
+a {
+  color: #0085ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.bold {
+  font-weight: 700;
+}
+
+/* layout */
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+main {
+  margin: 2em 0 4em;
+}
+.text {
+  max-width: 750px;
+  margin: 0 auto;
+}
+.text figure {
+  margin: 4em 0;
+}
+.text img {
+  outline: 1px solid #eaeaea;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.text figcaption {
+  margin: 1em 0 0;
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
+}
+footer {
+  max-width: 750px;
+  margin: 2em auto;
+}
+
+/* generic chart styles */
+.chart {
+  position: relative;
+  margin: 4em auto 6em;
+}
+svg {
+  display: block;
+  margin: 0 auto;
+}
+.axis path,
+.tick line {
+  display: none;
+}
+.axis .label {
+  fill: #444;
+  font-size: 11px;
+}
+.axis .tick text {
+  fill: #444;
+  font-size: 11px;
+}
+
+/* annotations */
+.annotation-container {
+  pointer-events: none;
+  transition: 0.25s;
+  opacity: 1;
+}
+.annotation-container.disabled {
+  opacity: 0 !important;
+}
+.annotation path {
+  fill: none;
+  stroke: #2a2a2a;
+}
+.annotation-note path {
+  shape-rendering: crispEdges;
+}
+.annotation .connector-arrow,
+.annotation .connector-dot,
+.annotation text {
+  fill: #2a2a2a;
+}
+.annotation-note {
+  font-size: 13px;
+}
+.annotation-note-bg {
+  fill: rgba(0, 0, 0, 0);
+}
+.annotation-note-title {
+  font-weight: 700;
+}
+
+/* chart info */
+.chart-info {
+  background: #fff;
+  font-size: 16px;
+  line-height: 22px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px 20px;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  display: none;
+}
+.chart-info::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -51px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%);
+}
+.chart-info-date {
+  font-size: 1.8em;
+  margin: 0.4em 0 0.8em;
+}
+
+/* indicators */
+.indicator-bg,
+.indicator {
+  shape-rendering: crispEdges;
+  stroke: #2a2a2a;
+  stroke-width: 1;
+  display: none;
+}
+.indicator {
+  stroke: #fff;
+}
+
+/* friends chart */
+#friends .line {
+  fill: none;
+  stroke: #f50e6b;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+#friends .outline {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0);
+  stroke-width: 8;
+}
+#friends .y-axis .tick line {
+  display: block;
+  shape-rendering: crispEdges;
+  stroke: #eaeaea;
+}
+#friends .y-axis-label {
+  fill: #444;
+  font-size: 11px;
+  text-anchor: end;
+}
+#friends .tooltip {
+  background: #fff;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 22px;
+  white-space: nowrap;
+  position: absolute;
+  display: none;
+}
+
+/* compare chart */
+.button-update-container {
+  background: #fff;
+  width: 180px;
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+.button-update-container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%);
+}
+.button-update {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  color: #2a2a2a;
+  padding: 0 0 0 13px;
+  display: block;
+  position: relative;
+}
+.button-update:focus {
+  outline: 0;
+}
+.button-update--active {
+  font-weight: 700;
+}
+.button-update::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+.button-update-messages::before {
+  color: #0085ff;
+}
+.button-update-timeline::before {
+  color: #f50e6b;
+}
+.button-update-messages.button-update--active::before {
+  background: #0085ff;
+}
+.button-update-timeline.button-update--active::before {
+  background: #f50e6b;
+}
+#compare.mode-messages .indicator-0,
+#compare.mode-timeline .indicator-1 {
+  display: none !important;
+}
+#compare .y-axis {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.4s;
+}
+#compare .y-axis.active {
+  opacity: 1;
+}
+#compare .area-messages {
+  fill: #0085ff;
+  stroke: rgba(19, 60, 85, 0.6);
+}
+#compare .area-timeline {
+  fill: #f50e6b;
+  stroke: rgba(85, 19, 40, 0.6);
+}
+#compare .area {
+  opacity: 0.2;
+  transition: 0.4s;
+}
+#compare .area.active {
+  opacity: 0.8;
+}
+
+/* messages chart */
+#messages .path-area {
+  transition: 0.4s;
+  opacity: 1;
+  stroke: rgba(19, 60, 85, 0.8);
+  stroke-width: 0;
+}
+#messages .y-axis-label {
+  background: #fff;
+  font-size: 11px;
+  color: #444;
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+#messages .y-axis-label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%);
+}
+#messages-thread-container {
+  display: none;
+}
+#messages .blocker {
+  position: absolute;
+  background: #fff;
+}
+
+/* messages stats */
+.messages-stats {
+  margin: 4em 0;
+  display: flex;
+  justify-content: space-between;
+}
+.stat {
+  color: #fff;
+  background: #0085ff;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  font-size: 1.35em;
+  line-height: 1.2;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+.stat__number {
+  font-size: 2em;
+  font-weight: 400;
+}
