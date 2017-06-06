@@ -58,7 +58,7 @@ a:hover {
 
 /* layout */
 .wrap {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -363,4 +363,24 @@ svg {
 .stat__number {
   font-size: 2em;
   font-weight: 400;
+}
+@media (max-width: 768px) {
+  h1,
+  h2 {
+    margin: 1.5em 0 0.5em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  ul {
+    padding: 0 0 0 1.5em;
+  }
+  .messages-stats {
+    margin: 2em 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat {
+    margin: 1em 0;
+  }
 }

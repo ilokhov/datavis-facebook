@@ -1,10 +1,12 @@
 window.addEventListener("load", () => {
 
+  const baseWidth = 1180;
   const margin = {top: 150, right: 40, bottom: 20, left: 10};
-  const width = 1180 - margin.left - margin.right;
+  const width = baseWidth - margin.left - margin.right;
   const height = 550 - margin.top - margin.bottom;
 
   const chartContainer = d3.select("#compare");
+  document.getElementById("compare").style.width = `${baseWidth}px`; // container width = chart width
   const chart = chartContainer.append("svg")
                                 .attr("width", width + margin.left + margin.right)
                                 .attr("height", height  + margin.top + margin.bottom)
